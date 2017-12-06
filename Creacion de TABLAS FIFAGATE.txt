@@ -1,0 +1,55 @@
+
+CREATE TABLE PERSONAS(
+  PersonasID   CHAR (4) NOT NULL
+, Nombre       VARCHAR2 (30) NOT NULL
+, Apellido     VARCHAR2 (30) NOT NULL
+, Nacionalidad VARCHAR2 (30) NOT NULL
+, PRIMARY KEY (PersonasID)
+);
+
+CREATE TABLE SENTENCIA(
+  SentenciaID    CHAR (4) NOT NULL
+, PersonaID     CHAR (4) NOT NULL
+, Tipo_sentencia VARCHAR2 (40) DEFAULT 'N/A'
+, CONSTRAINT Sentencia_PK PRIMARY KEY(SentenciaID)
+, CONSTRAINT FK_Sent_PersonasID FOREIGN KEY (PersonaID) REFERENCES PERSONAS (PersonasID)
+);
+
+CREATE TABLE PERSONAS_SUSPENDIDAS(
+  Personas_suspendidasID   CHAR (4) NOT NULL
+, PersonaID     CHAR (4) NOT NULL
+, Ocupacion      VARCHAR2 (50)
+, Fecha          DATE
+, CONSTRAINT PerSusp_PK PRIMARY KEY(Personas_suspendidasID)
+, CONSTRAINT FK_PerSuspID FOREIGN KEY (PersonaID) REFERENCES PERSONAS (PersonasID)
+);
+
+CREATE TABLE CAPTURA_INTERNACIONAL(
+  Captura_InternacionalID   CHAR (4) NOT NULL
+, PersonaID     CHAR (4) NOT NULL
+, SentenciaID    CHAR (4) NOT NULL
+, Ocupacion      VARCHAR2 (90)
+, CONSTRAINT CapInter_PK PRIMARY KEY(Captura_InternacionalID)
+, CONSTRAINT FK_CaptInter_ID FOREIGN KEY (PersonaID) REFERENCES PERSONAS (PersonasID)
+, CONSTRAINT FK_CaptInterID FOREIGN KEY (SentenciaID) REFERENCES SENTENCIA (SentenciaID)
+);
+
+CREATE TABLE PERSONAS_ARRESTADAS(
+  Personas_ArrestadasID   CHAR (4) NOT NULL
+, PersonaID     CHAR (4) NOT NULL
+, SentenciaID    CHAR (4) NOT NULL
+, Ocupacion      VARCHAR2 (150)
+, CONSTRAINT PerArres_PK PRIMARY KEY(Personas_ArrestadasID)
+, CONSTRAINT FK_PerInv_ID FOREIGN KEY (PersonaID) REFERENCES PERSONAS (PersonasID)
+, CONSTRAINT FK_PerInvID FOREIGN KEY (SentenciaID) REFERENCES SENTENCIA (SentenciaID)
+);
+
+CREATE TABLE CAMBIOS_ALTOS_CARGOS(
+  Cambios_altosCargosID CHAR (4) NOT NULL
+, Cargo                 VARCHAR2 (50)
+, Funcionario_saliente  CHAR (4) NOT NULL 
+, Funcionario_entrante  CHAR (4) NOT NULL
+, CONSTRAINT CambioAltCarg_PK PRIMARY KEY(Cambios_altosCargosID)
+, CONSTRAINT FK_CambiosSalID FOREIGN KEY (Funcionario_saliente) REFERENCES PERSONAS (PersonasID)
+, CONSTRAINT FK_CambiosEntID FOREIGN KEY (Funcionario_entrante) REFERENCES PERSONAS (PersonasID)
+);

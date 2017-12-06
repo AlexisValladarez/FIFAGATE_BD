@@ -1,0 +1,11 @@
+
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI01','P027', 'S027', 'Ex Presidente del Quilmes Atlético Club y ex Secretario General de la CONMEBOL');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI02','P028', 'S028', 'Ex representante de la AFA en la CONMEBOL');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI03','P029', 'S029', 'Ex presidente de la Federación Panameña de Fútbol y Comité Ejecutivo de la Concacaf');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI04','P030', 'S030', 'Ex presidente de la Federación Nacional Autónoma de Fútbol de Honduras');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI05','P031', 'S031', 'Presidente de la Confederación Brasileña de Fútbol');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI06','P032', 'S032', 'Ex presidente de la Confederación Brasileña de Fútbol');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI07','P033', 'S033', 'Presidente de la Federación Boliviana de Fútbol');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI08','P034', 'S034', 'Ex presidente de la comisión normalizadora de la Federación Salvadoreña de Fútbol');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI09','P035', 'S035', 'Ex presidente de la Federación Peruana de Fútbol');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI10','P036', 'S036', 'Ex Vicepresidente de la Comisión de Asuntos Legales de la FIFA');

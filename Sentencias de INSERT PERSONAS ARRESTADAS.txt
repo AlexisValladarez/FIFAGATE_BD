@@ -1,0 +1,43 @@
+
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA01','P001', 'S001', 'Vicepresidente interino de la FIFA y miembro del Comité Ejecutivo, presidente de la CONCACAF');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA02','P002', 'S002', 'Miembro del Comité Ejecutivo de la FIFA, miembro del Comité Ejecutivo de la CONCACAF y presidente de la Federación Costarricense de Fútbol');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA03','P003', 'S004', 'Oficial de Desarrollo de la FIFA, ex presidente de la Unión Centroamericana de Fútbol y presidente de la Federación Nicaragüense de Fútbol');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA04','P004', 'S004', 'Asesor del presidente de la CONCACAF y ex secretario general de la Federación de Fútbol de las Islas Caimán');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA05','P005', 'S005', 'Ex vicepresidente y miembro del Comité Ejecutivo de la FIFA, presidente de la CONCACAF, presidente de la Unión del Fútbol Caribeño');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA06','P006', 'S006', 'Vicepresidente y miembro del Comité Ejecutivo de la FIFA, ex presidente de la CONMEBOL y la Asociación Uruguaya de Fútbol');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA07','P007', 'S007', 'Miembro del Comité Ejecutivo de la CONMEBOL y presidente de la Federación Venezolana de Fútbol');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA08','P008', 'S008', 'Ex miembro del Comité Ejecutivo de la FIFA y ex presidente de la CONMEBOL');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA09','P009', 'S009', 'Presidente de la Federación Nacional Autónoma de Fútbol de Honduras, Vicepresidente de la FIFA y Presidente Interino de la Concacaf');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA10','P010', 'S010', 'Presidente de la CONMEBOL y vicepresidente 1º de la FIFA');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA11','P011', 'S011', 'Presidente de la Federación Nacional de Fútbol de Guatemala');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA12','P012', 'S012', 'Secretario del Comité Ejecutivo de la Federación Nacional de Fútbol de Guatemala');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA13','P013', 'S013', 'Ex accionista y CEO de Torneos y Competencias SA');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA14','P014', 'S014', 'Dueño de Valente Corp. y Somerton Ltd');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA15','P015', 'S015', 'Presidente de Traffic Sports USA Inc');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA16','P016', 'S016', 'Ex secretario general de la CONCACAF y ex miembro del comité ejecutivo de la FIFA');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA17','P017', 'S017', 'Abogado, periodista y empresario brasileño y dueño de Traffic Group');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA18','P018', 'S018', 'Ex oficial de Desarrollo de la FIFA');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA19','P019', 'S019', 'Hermano implicado de Daryll Warner');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA20','P020', 'S020', 'Directivo de la empresa de marketing deportivo Full Play Group SA');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA21','P021', 'S021', 'Presidente de la Federación Ecuatoriana de Fútbol');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA22','P022', 'S022', 'Empresa de marketing deportivo Full Play Group SA');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA23','P023', 'S023', 'Miembro del Comité de Organización para los torneos de fútbol olímpicos de la FIFA y ex presidente de la Confederación Brasileña de Fútbol');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA24','P024', 'S024', 'Presidente de la Federación Boliviana de Fútbol y ex-tesorero de la CONMEBOL');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA25','P025', 'S025', 'Expresidente de la Federación Colombiana de Fútbol y exmiembro del comité ejecutivo de la FIFA');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA26','P026', 'S026', 'Expresidente de la ANFP y exvicepresidente de la CONMEBOL');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

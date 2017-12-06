@@ -1,0 +1,10 @@
+UPDATE PERSONAS SET NACIONALIDAD = 'Colombia' WHERE NOMBRE='Eduardo';
+UPDATE SENTENCIA SET TIPO_SENTENCIA = 'Fugitivo' WHERE TIPO_SENTENCIA = 'Arrestado';
+UPDATE PERSONAS_SUSPENDIDAS SET OCUPACION = 'Presidente de la FIFA' WHERE OCUPACION = 'Vicipresidente de la FIFA';
+UPDATE PERSONAS_ARRESTADAS SET OCUPACION = 'Secretario general de la FIFA' WHERE OCUPACION = 'Ex oficial de Desarrollo de la FIFA';
+UPDATE CAPTURA_INTERNACIONAL SET OCUPACION = 'Vicipresidente de la Federación Boliviana de Fútbol' WHERE OCUPACION = 'Presidente de la Federación Boliviana de Fútbol';
+UPDATE CAMBIOS_ALTOS_CARGOS SET CARGO = 'Vicipresidente de la UEFA' WHERE CARGO LIKE 'Presidente de la FIFA%';
+
+
+
+

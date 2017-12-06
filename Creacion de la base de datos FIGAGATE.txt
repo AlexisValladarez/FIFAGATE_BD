@@ -1,0 +1,205 @@
+CREATE TABLE PERSONAS(
+  PersonasID   CHAR (4) NOT NULL
+, Nombre       VARCHAR2 (30) NOT NULL
+, Apellido     VARCHAR2 (30) NOT NULL
+, Nacionalidad VARCHAR2 (30) NOT NULL
+, PRIMARY KEY (PersonasID)
+);
+
+CREATE TABLE SENTENCIA(
+  SentenciaID    CHAR (4) NOT NULL
+, PersonaID     CHAR (4) NOT NULL
+, Tipo_sentencia VARCHAR2 (40) DEFAULT 'N/A'
+, CONSTRAINT Sentencia_PK PRIMARY KEY(SentenciaID)
+, CONSTRAINT FK_Sent_PersonasID FOREIGN KEY (PersonaID) REFERENCES PERSONAS (PersonasID)
+);
+
+CREATE TABLE PERSONAS_SUSPENDIDAS(
+  Personas_suspendidasID   CHAR (4) NOT NULL
+, PersonaID     CHAR (4) NOT NULL
+, Ocupacion      VARCHAR2 (50)
+, Fecha          DATE
+, CONSTRAINT PerSusp_PK PRIMARY KEY(Personas_suspendidasID)
+, CONSTRAINT FK_PerSuspID FOREIGN KEY (PersonaID) REFERENCES PERSONAS (PersonasID)
+);
+
+CREATE TABLE CAPTURA_INTERNACIONAL(
+  Captura_InternacionalID   CHAR (4) NOT NULL
+, PersonaID     CHAR (4) NOT NULL
+, SentenciaID    CHAR (4) NOT NULL
+, Ocupacion      VARCHAR2 (90)
+, CONSTRAINT CapInter_PK PRIMARY KEY(Captura_InternacionalID)
+, CONSTRAINT FK_CaptInter_ID FOREIGN KEY (PersonaID) REFERENCES PERSONAS (PersonasID)
+, CONSTRAINT FK_CaptInterID FOREIGN KEY (SentenciaID) REFERENCES SENTENCIA (SentenciaID)
+);
+
+CREATE TABLE PERSONAS_ARRESTADAS(
+  Personas_ArrestadasID   CHAR (4) NOT NULL
+, PersonaID     CHAR (4) NOT NULL
+, SentenciaID    CHAR (4) NOT NULL
+, Ocupacion      VARCHAR2 (150)
+, CONSTRAINT PerArres_PK PRIMARY KEY(Personas_ArrestadasID)
+, CONSTRAINT FK_PerInv_ID FOREIGN KEY (PersonaID) REFERENCES PERSONAS (PersonasID)
+, CONSTRAINT FK_PerInvID FOREIGN KEY (SentenciaID) REFERENCES SENTENCIA (SentenciaID)
+);
+
+CREATE TABLE CAMBIOS_ALTOS_CARGOS(
+  Cambios_altosCargosID CHAR (4) NOT NULL
+, Cargo                 VARCHAR2 (50)
+, Funcionario_saliente  CHAR (4) NOT NULL 
+, Funcionario_entrante  CHAR (4) NOT NULL
+, CONSTRAINT CambioAltCarg_PK PRIMARY KEY(Cambios_altosCargosID)
+, CONSTRAINT FK_CambiosSalID FOREIGN KEY (Funcionario_saliente) REFERENCES PERSONAS (PersonasID)
+, CONSTRAINT FK_CambiosEntID FOREIGN KEY (Funcionario_entrante) REFERENCES PERSONAS (PersonasID)
+);
+
+INSERT INTO PERSONAS VALUES ('P001','Jeffrey','Webb', 'Islas Caimán');
+INSERT INTO PERSONAS VALUES ('P002','Eduardo','Li', 'Costa Rica');
+INSERT INTO PERSONAS VALUES ('P003','Julio','Rocha', 'Nicaragua');
+INSERT INTO PERSONAS VALUES ('P004','Costas','Takkas', 'Islas Caimán');
+INSERT INTO PERSONAS VALUES ('P005','Jack','Warner', 'Trinidad y Tobago');
+INSERT INTO PERSONAS VALUES ('P006','Eugenio','Figueredo', 'Uruguay');
+INSERT INTO PERSONAS VALUES ('P007','Rafael','Esquivel', 'Venezuela');
+INSERT INTO PERSONAS VALUES ('P008','Nicolás','Leoz', 'Paraguay');
+INSERT INTO PERSONAS VALUES ('P009','Alfredo','Hawit', 'Honduras');
+INSERT INTO PERSONAS VALUES ('P010','Juan Ángel','Napout', 'Paraguay');
+INSERT INTO PERSONAS VALUES ('P011','Brayan','Jiménez', 'Guatemala');
+INSERT INTO PERSONAS VALUES ('P012','Héctor','Trujillo', 'Guatemala');
+INSERT INTO PERSONAS VALUES ('P013','Alejandro','Burzaco', 'Argentina');
+INSERT INTO PERSONAS VALUES ('P014','José','Margulies', 'Brasil');
+INSERT INTO PERSONAS VALUES ('P015','Aaron','Davidson', 'Estados Unidos');
+INSERT INTO PERSONAS VALUES ('P016','Chuck','Blazer', 'Estados Unidos');
+INSERT INTO PERSONAS VALUES ('P017','José','Hawilla', 'Brasil');
+INSERT INTO PERSONAS VALUES ('P018','Daryll','Warner', 'Trinidad y Tobago');
+INSERT INTO PERSONAS VALUES ('P019','Daryan','Warner', 'Trinidad y Tobago');
+INSERT INTO PERSONAS VALUES ('P020','Hugo','Jinkis', 'Argentina');
+INSERT INTO PERSONAS VALUES ('P021','Luis','Chiriboga Acosta', 'Ecuador');
+INSERT INTO PERSONAS VALUES ('P022','Mariano','Jinkis', 'Argentina');
+INSERT INTO PERSONAS VALUES ('P023','José Maria','Marin', 'Brazil');
+INSERT INTO PERSONAS VALUES ('P024','Carlos Alberto','Chávez Landivar', 'Bolivia');
+INSERT INTO PERSONAS VALUES ('P025','Luis','Bedoya', 'Colombia');
+INSERT INTO PERSONAS VALUES ('P026','Sergio','Jadue', 'Chile');
+INSERT INTO PERSONAS VALUES ('P027','José Luis','Meiszner', 'Argentina');
+INSERT INTO PERSONAS VALUES ('P028','Eduardo','Deluca', 'Argentina');
+INSERT INTO PERSONAS VALUES ('P029','Ariel','Alvarado', 'Panamá');
+INSERT INTO PERSONAS VALUES ('P030','Rafael','Callejas', 'Honduras');
+INSERT INTO PERSONAS VALUES ('P031','Marco','Polo del Norte', 'Brasil');
+INSERT INTO PERSONAS VALUES ('P032','Ricardo','Teixeira', 'Brasil');
+INSERT INTO PERSONAS VALUES ('P033','Romer','Osuna', 'Bolivia');
+INSERT INTO PERSONAS VALUES ('P034','Reynaldo','Vásquez', 'El Salvador');
+INSERT INTO PERSONAS VALUES ('P035','Manuel','Burga', 'Perú');
+INSERT INTO PERSONAS VALUES ('P036','Rafael','Salguero', 'Guatemala');
+INSERT INTO PERSONAS VALUES ('P037','Joseph','Blatter', 'Suiza');
+INSERT INTO PERSONAS VALUES ('P038','Michael','Platini', 'Francia');
+INSERT INTO PERSONAS VALUES ('P039','Jérome','Valcke', 'Francia');
+INSERT INTO PERSONAS VALUES ('P040','Chung','Mong joon', 'Corea del Sur');
+INSERT INTO PERSONAS VALUES ('P041','Gianni','Infantino', 'Italia');
+INSERT INTO PERSONAS VALUES ('P042','Issa','Hayatou', 'Camerún');
+INSERT INTO PERSONAS VALUES ('P043','Ángel María','Villar', 'España');
+INSERT INTO PERSONAS VALUES ('P044','Aleksander','Ceferin', 'Eslovenia');
+INSERT INTO PERSONAS VALUES ('P045','Markus','Kattner', 'Suiza');
+INSERT INTO PERSONAS VALUES ('P046','Justino','Compeán', 'México');
+INSERT INTO PERSONAS VALUES ('P047','Horace','Burrell', 'Jamaica');
+INSERT INTO PERSONAS VALUES ('P048','Sunil','Gulati', 'Estados Unidos');
+INSERT INTO PERSONAS VALUES ('P049','Pedro','Chaluja', 'Panamá');
+INSERT INTO PERSONAS VALUES ('P050','Luis','Hernández', 'México');
+INSERT INTO PERSONAS VALUES ('P051','Victor','Montagliani', 'Canadá');
+INSERT INTO PERSONAS VALUES ('P052','Sonia','Bien Aime', 'Islas Turcas y Caicos');
+INSERT INTO PERSONAS VALUES ('P053','Víctor','Montagliani', 'Canadá');
+INSERT INTO PERSONAS VALUES ('P054','Wilmar','Valdez', 'Uruguay');
+INSERT INTO PERSONAS VALUES ('P055','Alejandro','Domínguez', 'Paraguay');
+
+
+INSERT INTO SENTENCIA VALUES ('S001','P001','Libertad bajo fianza');
+INSERT INTO SENTENCIA VALUES ('S002','P002','Arrestado');
+INSERT INTO SENTENCIA VALUES ('S003','P003','Arrestado');
+INSERT INTO SENTENCIA VALUES ('S004','P004','Arrestado');
+INSERT INTO SENTENCIA VALUES ('S005','P005','Libertad bajo fianza');
+INSERT INTO SENTENCIA VALUES ('S006','P006','Arrestado');
+INSERT INTO SENTENCIA VALUES ('S007','P007','Arrestado');
+INSERT INTO SENTENCIA VALUES ('S008','P008','Arrestado');
+INSERT INTO SENTENCIA VALUES ('S009','P009','Arrestado');
+INSERT INTO SENTENCIA VALUES ('S010','P010','Arrestado');
+INSERT INTO SENTENCIA VALUES ('S011','P011','Arrestado');
+INSERT INTO SENTENCIA VALUES ('S012','P012','Libertad condicional');
+INSERT INTO SENTENCIA VALUES ('S013','P013','Entregado');
+INSERT INTO SENTENCIA VALUES ('S014','P014','Fugitivo');
+INSERT INTO SENTENCIA VALUES ('S015','P015','Libertad bajo fianza');
+INSERT INTO SENTENCIA VALUES ('S016','P016','Declarado culpable');
+INSERT INTO SENTENCIA VALUES ('S017','P017','Declarado culpable');
+INSERT INTO SENTENCIA VALUES ('S018','P018','Declarado culpable');
+INSERT INTO SENTENCIA VALUES ('S019','P019','Declarado culpable');
+INSERT INTO SENTENCIA VALUES ('S020','P020','Entregado');
+INSERT INTO SENTENCIA VALUES ('S021','P021','Declarado culpable');
+INSERT INTO SENTENCIA VALUES ('S022','P022','Entregado');
+INSERT INTO SENTENCIA VALUES ('S023','P023','Arrestado');
+INSERT INTO SENTENCIA VALUES ('S024','P024','Arrestado');
+INSERT INTO SENTENCIA VALUES ('S025','P025','Entregado');
+INSERT INTO SENTENCIA VALUES ('S026','P026','Entregado');
+INSERT INTO SENTENCIA VALUES ('S027','P027','Orden de captura internacional');
+INSERT INTO SENTENCIA VALUES ('S028','P028','Orden de captura internacional');
+INSERT INTO SENTENCIA VALUES ('S029','P029','Orden de captura internacional');
+INSERT INTO SENTENCIA VALUES ('S030','P030','Aguardando juicio');
+INSERT INTO SENTENCIA VALUES ('S031','P031','Orden de captura internacional');
+INSERT INTO SENTENCIA VALUES ('S032','P032','Orden de captura internacional');
+INSERT INTO SENTENCIA VALUES ('S033','P033','Orden de captura internacional');
+INSERT INTO SENTENCIA VALUES ('S034','P034','Orden de captura internacional');
+INSERT INTO SENTENCIA VALUES ('S035','P035','Capturado');
+INSERT INTO SENTENCIA VALUES ('S036','P036','Orden de captura internacional');
+
+
+INSERT INTO PERSONAS_SUSPENDIDAS VALUES ('PS01','P037', 'Presidente de la FIFA', TO_DATE('2015-12-20','YYYY-MM-DD'));
+INSERT INTO PERSONAS_SUSPENDIDAS VALUES ('PS02','P038', 'Presidente de la UEFA', TO_DATE('2015-12-20','YYYY-MM-DD'));
+INSERT INTO PERSONAS_SUSPENDIDAS VALUES ('PS03','P016', 'Ex secretario general de la CONCACAF', TO_DATE('2015-07-09','YYYY-MM-DD'));
+INSERT INTO PERSONAS_SUSPENDIDAS VALUES ('PS04','P039', 'Secretario general de la FIFA', TO_DATE('2015-09-17','YYYY-MM-DD'));
+INSERT INTO PERSONAS_SUSPENDIDAS VALUES ('PS05','P005', 'Ex vicipresidente del comité ejecutivo de la FIFA', TO_DATE('2015-09-29','YYYY-MM-DD'));
+INSERT INTO PERSONAS_SUSPENDIDAS VALUES ('PS06','P040', 'Vicipresidente de la FIFA', TO_DATE('2015-10-08','YYYY-MM-DD'));
+INSERT INTO PERSONAS_SUSPENDIDAS VALUES ('PS07','P010', 'Vicipresidente de la primera FIFA', TO_DATE('2015-12-04','YYYY-MM-DD'));
+INSERT INTO PERSONAS_SUSPENDIDAS VALUES ('PS08','P009', 'Vicipresidente de la FIFA', TO_DATE('2015-12-04','YYYY-MM-DD'));
+INSERT INTO PERSONAS_SUSPENDIDAS VALUES ('PS09','P026', 'Cargo en la presidencia en la ANFP', TO_DATE('2015-06-06','YYYY-MM-DD'));
+
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA01','P001', 'S001', 'Vicepresidente interino de la FIFA y miembro del Comité Ejecutivo, presidente de la CONCACAF');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA02','P002', 'S002', 'Miembro del Comité Ejecutivo de la FIFA, miembro del Comité Ejecutivo de la CONCACAF y presidente de la Federación Costarricense de Fútbol');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA03','P003', 'S004', 'Oficial de Desarrollo de la FIFA, ex presidente de la Unión Centroamericana de Fútbol y presidente de la Federación Nicaragüense de Fútbol');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA04','P004', 'S004', 'Asesor del presidente de la CONCACAF y ex secretario general de la Federación de Fútbol de las Islas Caimán');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA05','P005', 'S005', 'Ex vicepresidente y miembro del Comité Ejecutivo de la FIFA, presidente de la CONCACAF, presidente de la Unión del Fútbol Caribeño');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA06','P006', 'S006', 'Vicepresidente y miembro del Comité Ejecutivo de la FIFA, ex presidente de la CONMEBOL y la Asociación Uruguaya de Fútbol');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA07','P007', 'S007', 'Miembro del Comité Ejecutivo de la CONMEBOL y presidente de la Federación Venezolana de Fútbol');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA08','P008', 'S008', 'Ex miembro del Comité Ejecutivo de la FIFA y ex presidente de la CONMEBOL');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA09','P009', 'S009', 'Presidente de la Federación Nacional Autónoma de Fútbol de Honduras, Vicepresidente de la FIFA y Presidente Interino de la Concacaf');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA10','P010', 'S010', 'Presidente de la CONMEBOL y vicepresidente 1º de la FIFA');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA11','P011', 'S011', 'Presidente de la Federación Nacional de Fútbol de Guatemala');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA12','P012', 'S012', 'Secretario del Comité Ejecutivo de la Federación Nacional de Fútbol de Guatemala');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA13','P013', 'S013', 'Ex accionista y CEO de Torneos y Competencias SA');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA14','P014', 'S014', 'Dueño de Valente Corp. y Somerton Ltd');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA15','P015', 'S015', 'Presidente de Traffic Sports USA Inc');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA16','P016', 'S016', 'Ex secretario general de la CONCACAF y ex miembro del comité ejecutivo de la FIFA');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA17','P017', 'S017', 'Abogado, periodista y empresario brasileño y dueño de Traffic Group');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA18','P018', 'S018', 'Ex oficial de Desarrollo de la FIFA');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA19','P019', 'S019', 'Hermano implicado de Daryll Warner');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA20','P020', 'S020', 'Directivo de la empresa de marketing deportivo Full Play Group SA');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA21','P021', 'S021', 'Presidente de la Federación Ecuatoriana de Fútbol');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA22','P022', 'S022', 'Empresa de marketing deportivo Full Play Group SA');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA23','P023', 'S023', 'Miembro del Comité de Organización para los torneos de fútbol olímpicos de la FIFA y ex presidente de la Confederación Brasileña de Fútbol');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA24','P024', 'S024', 'Presidente de la Federación Boliviana de Fútbol y ex-tesorero de la CONMEBOL');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA25','P025', 'S025', 'Expresidente de la Federación Colombiana de Fútbol y exmiembro del comité ejecutivo de la FIFA');
+INSERT INTO PERSONAS_ARRESTADAS VALUES ('PA26','P026', 'S026', 'Expresidente de la ANFP y exvicepresidente de la CONMEBOL');
+
+
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI01','P027', 'S027', 'Ex Presidente del Quilmes Atlético Club y ex Secretario General de la CONMEBOL');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI02','P028', 'S028', 'Ex representante de la AFA en la CONMEBOL');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI03','P029', 'S029', 'Ex presidente de la Federación Panameña de Fútbol y Comité Ejecutivo de la Concacaf');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI04','P030', 'S030', 'Ex presidente de la Federación Nacional Autónoma de Fútbol de Honduras');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI05','P031', 'S031', 'Presidente de la Confederación Brasileña de Fútbol');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI06','P032', 'S032', 'Ex presidente de la Confederación Brasileña de Fútbol');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI07','P033', 'S033', 'Presidente de la Federación Boliviana de Fútbol');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI08','P034', 'S034', 'Ex presidente de la comisión normalizadora de la Federación Salvadoreña de Fútbol');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI09','P035', 'S035', 'Ex presidente de la Federación Peruana de Fútbol');
+INSERT INTO CAPTURA_INTERNACIONAL VALUES ('CI10','P036', 'S036', 'Ex Vicepresidente de la Comisión de Asuntos Legales de la FIFA');
+
+
+INSERT INTO CAMBIOS_ALTOS_CARGOS VALUES ('C001','Presidente de la FIFA', 'P037', 'P042');
+INSERT INTO CAMBIOS_ALTOS_CARGOS VALUES ('C002','Presidente de la UEFA', 'P038', 'P043');
+INSERT INTO CAMBIOS_ALTOS_CARGOS VALUES ('C003','Secretario General de la FIFA', 'P039', 'P045');
+INSERT INTO CAMBIOS_ALTOS_CARGOS VALUES ('C004','Presidente de la Concacaf', 'P001', 'P009');
+INSERT INTO CAMBIOS_ALTOS_CARGOS VALUES ('C005','Presidente de la CONMEBOL', 'P010', 'P054');
